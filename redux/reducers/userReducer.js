@@ -1,6 +1,7 @@
+
 function getId(state){
-    return state.todos.reduce((maxId, todo) => {
-      return Math.max(todo.id, maxId)
+    return state.ADVENTUREs.reduce((maxId, ADVENTURE) => {
+      return Math.max(ADVENTURE.id, maxId)
     }, -1) + 1
 }
 
@@ -11,6 +12,15 @@ let userReducer = function(user={}, action){
           username: user.username,
           id: action.id
         }
+      case 'CREATE_USER':
+        return action.user
+
+      case 'LOGIN_REQUEST':
+        return {
+            username: user.username,
+            id: action.id
+          }
+
     default:
       return user;
   }

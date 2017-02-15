@@ -1,11 +1,17 @@
 import {combineReducers} from 'redux'
-import todoReducer from './todoReducer'
+import guidesReducer from './guidesReducer'
+import adventuresReducer from './adventuresReducer'
+
 import userReducer from './userReducer'
+import authReducer from './auth'
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 
 const rootReducer = combineReducers({
-  todos: todoReducer,
-  user: userReducer
+  guides: guidesReducer,
+  adventures: adventuresReducer,
+  routing: routerReducer,
+  auth: authReducer
 })
 
 export default rootReducer

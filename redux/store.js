@@ -4,10 +4,14 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 
 //add middleware
-let finalCreateStore = compose (
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+let finalCreateStore = composeEnhancers (
   applyMiddleware(thunk, logger())
 )(createStore)
 
-export default function configureStore(initialState = {todos:[], user:{}}){
+export default function configureStore(initialState = {}){
+  console.log("state created")
+  console.log(initialState)
   return finalCreateStore(rootReducer, initialState)
 }
