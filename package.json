@@ -4,7 +4,8 @@
   "description": "db-guides with react, redux",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/server.js --ignore components"
+    "serve": "nodemon server/server.js --ignore components",
+    "start" : "node server/server.js"
   },
   "repository": {
     "type": "git",
