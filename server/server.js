@@ -18,8 +18,8 @@ app.use('/', function (req, res) {
     res.sendFile(path.resolve('client/index.html'));
 });
 
-var port = 3000;
-
+String host = "0.0.0.0";
+int port = System.getenv("PORT") || 3000
 app.listen(port, function(error) {
   if (error) throw error;
   console.log("Express server listening on port", port);
