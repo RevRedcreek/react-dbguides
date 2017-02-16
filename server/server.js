@@ -18,7 +18,6 @@ app.use('/', function (req, res) {
     res.sendFile(path.resolve('client/index.html'));
 });
 
-String host = "0.0.0.0";
 int port = System.getenv("PORT") || 3000
 app.listen(port, function(error) {
   if (error) throw error;
