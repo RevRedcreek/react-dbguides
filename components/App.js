@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react'
 import GlobalNav from './GlobalNav'
-import Dashboard from './Dashboard'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import actions from '../redux/actions'
