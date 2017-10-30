@@ -27,14 +27,13 @@ class GlobalNav extends Component {
 
           </div>
           <ul className="nav navbar-nav">
-            <li><Link to="/guides" className="active" style={{ margin: '7px'}}>Guides</Link></li>
-            <li><Link to="/adventures" className="active" style={{ margin: '7px'}}>Adventures</Link></li>
+            <li><Link to="/guides" onlyActiveOnIndex="true" style={{ margin: '7px'}}>Guides</Link></li>
+            <li><Link to="/adventures" onlyActiveOnIndex="true" style={{ margin: '7px'}}>Adventures</Link></li>
           </ul>
           <div style={{ float: 'right',  margin: '15px'}}>
             {!isAuthenticated &&
                       <Login
                         errorMessage={errorMessage}
-                        onLoginClick={ () => actions.login()}
                       />
                     }
                     {isAuthenticated &&

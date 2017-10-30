@@ -14,6 +14,12 @@ export const COMPLETE_ADVENTURE = 'COMPLETE_ADVENTURE'
 export const DELETE_ADVENTURE = 'DELETE_ADVENTURE'
 
 let actions = {
+  expandGUIDE: function (id) {
+    return {
+      type: EXPAND_GUIDE,
+      id : id
+    }
+  },
   addADVENTURE: function (text){
     return {
       type: ADD_ADVENTURE,

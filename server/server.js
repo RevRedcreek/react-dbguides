@@ -18,7 +18,8 @@ app.use('/', function (req, res) {
     res.sendFile(path.resolve('client/index.html'));
 });
 
-int port = System.getenv("PORT") || 3000
+
+var port = 3333
 app.listen(port, function(error) {
   if (error) throw error;
   console.log("Express server listening on port", port);

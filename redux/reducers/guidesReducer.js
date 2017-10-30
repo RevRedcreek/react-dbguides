@@ -13,12 +13,12 @@ let guidesReducer = function(guides=[], action){
           completed: false,
           id: getId(guides)
         }, ...guides]
-    case 'COMPLETE_GUIDE':
+    case 'EXPAND_GUIDE':
       return guides.map((guide) => {
           return guide.id === action.id ?
-          Object.assign({}, guide, {completed: !guide.completed}) : guide
+          Object.assign({}, guide, {expanded: !guide.expanded}) : guide
         })
-      case 'DELETE_GUIDE':
+    case 'DELETE_GUIDE':
       return guides.filter((guide) => {
           return guide.id !== action.id
         })

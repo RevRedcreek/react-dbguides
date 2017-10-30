@@ -10,7 +10,7 @@ export default class GuideList extends Component{
           <ul>
             {
               this.props.guides.list.map((guide) =>{
-                return <GuideInfo key={guide.id} guide={guide} actions={this.props.actions}/>
+                return <GuideInfo guide={guide} actions={this.props.actions}/>
               })
             }
           </ul>
