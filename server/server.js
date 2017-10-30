@@ -19,7 +19,7 @@ app.use('/', function (req, res) {
 });
 
 
-var port = process.env.DYNO || 3333
+var port = process.env.PORT || 3333
 app.listen(port, function(error) {
   if (error) throw error;
   console.log("Express server listening on port", port);
