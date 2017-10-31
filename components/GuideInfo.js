@@ -17,12 +17,7 @@ export default class GuideInfo extends Component{
   //<img id="avatar" src={this.props.guide.avatar}/>
 
   render(){
-    const {guide, actions, isAuthenticated, errorMessage, isSecretQuote } = this.props
-    // let childrenWithProps //expecting home, guidelist, or adventure list components
-    // if (this.props.children){
-    //   childrenWithProps = React.Children.map(this.props.children,
-    //      (child) => React.cloneElement(child, {...this.props}));
-    // }
+    const {guide, actions} = this.props
     return (
         <div id="itemView" className="row">
           <Link to={`/guides/${guide.id}`} guide={guide} actions={actions}>
@@ -35,8 +30,6 @@ export default class GuideInfo extends Component{
               />
             </div>
             <div  className="col-sm-11">
-              <div className="media">
-                <div className="media-left">
                   <ul className='wordwrap'>
                     { Object.keys(guide).map(function (key) {
                       console.log('key: ', key);  // Returns key: 1 and key: 2
@@ -44,8 +37,6 @@ export default class GuideInfo extends Component{
                       },
                     this)}
                   </ul>
-                </div>
-              </div>
             </div>
           </Link>
         </div>

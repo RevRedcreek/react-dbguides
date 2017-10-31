@@ -28,7 +28,7 @@ export default class AdventureInfo extends Component{
         return (
             <div id="itemView" className="row">
               <Link to={`/adventures/${adventure.id}`} adventure={`${adventure}`}>
-                <div className="col-sm-1">
+                <div className="col-md-4">
                   <FontAwesome
                   className='fa-camera-retro'
                   name='fa-camera-retro'
@@ -36,19 +36,21 @@ export default class AdventureInfo extends Component{
                   style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',  padding: '10px' }}
                   />
                 </div>
-                <div  className="col-sm-11">
-                  <div className="media">
-                    <div className="media-left">
-                      <ul className='wordwrap'>
-                        { Object.keys(this.props.adventure).map(function (key) {
-                          console.log('key: ', key);  // Returns key: 1 and key: 2
-                          return (<li >{this.props.adventure[key]}</li>);
-                          },
-                        this)}
-                      </ul>
-                    </div>
-                  </div>
+                <div  className="col-md-4">
+                    <ul >
+                      { Object.keys(this.props.adventure).map(function (key) {
+                        console.log('key: ', key);  // Returns key: 1 and key: 2
+                        if(key !== 'description'){
+                          return (<li >{key} : {this.props.adventure[key]}</li>);
+                        }
+                        },
+                      this)}
+                    </ul>
                 </div>
+                <div  className="col-md-4">
+                {this.props.adventure['description']}
+                </div>
+
               </Link>
             </div>
         )

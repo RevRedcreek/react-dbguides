@@ -45,6 +45,38 @@ let initialState = {
         avatar: '/assets/images/guides/header-2.jpg',
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. '
 
+      },
+      {
+        username: 'Elissa',
+        email: 'email',
+        id: 1,
+        avatar: '/assets/images/guides/header-1.jpg',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ',
+        expanded: false
+      },
+      {
+        username: 'Chris',
+        email: 'email',
+        id: 2,
+        avatar: '/assets/images/guides/header-2.jpg',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. '
+
+      },
+      {
+        username: 'Elissa',
+        email: 'email',
+        id: 1,
+        avatar: '/assets/images/guides/header-1.jpg',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ',
+        expanded: false
+      },
+      {
+        username: 'Chris',
+        email: 'email',
+        id: 2,
+        avatar: '/assets/images/guides/header-2.jpg',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. '
+
       }
     ]
   },
