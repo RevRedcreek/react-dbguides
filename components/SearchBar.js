@@ -6,7 +6,8 @@ export default class SearchBar extends Component {
 
     return (
       	<div className="row" id ="search-box">
-          <div className="col-md-6"/>
+        <div className="col-md-6"/>
+
           <div className="col-md-6">
               <div id="custom-search-input">
                   <div className="input-group col-md-12">

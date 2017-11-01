@@ -90,6 +90,12 @@ ul {
   background:rgba(255,255,255,0.5);
   overflow: auto;
 }
+#listView span{
+  max-width:100%;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background:rgba(255,255,255,0.75);
+}
 #itemView{
   // display: flex;
   display: inline-flex;
@@ -142,11 +148,12 @@ ul {
   display: table-cell;
   vertical-align: middle;
 }
+
 #itemView > li:first-child {
  margin-right: 20px;
 }
-#itemViewExpanded{
 
+#itemViewExpanded{
   margin: 10px;
   border-radius: 25px;
   height: 450px;
@@ -155,6 +162,19 @@ ul {
   max-width:100%;
   font-size: 11px;
 }
+
+#itemViewExpanded form{
+  max-width:100%;
+  width: 90%;
+	padding: 50px;
+  margin: 50px;
+  display: flex-box;
+  display: table;
+  border: solid transparent;
+  display: table-cell;
+  vertical-align: middle;
+}
+
 #expandedViewBackground{
   height:80vh;
   max-height:100%;
@@ -163,6 +183,7 @@ ul {
   padding: 2%;
   background:rgba(255,255,255,0.5);
 }
+
 #itemViewExpanded{
   height: 97%;
   display: -ms-flex;

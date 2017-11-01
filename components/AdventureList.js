@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router'
 import AdventureInfo from './AdventureInfo'
 // import MapContainer from './MapContainer'
 
@@ -14,6 +15,8 @@ export default class AdventureList extends Component{
               })
             }
         </div>
+        <Link to='adventures/create'><span><i className='fa fa-plus'/></span></Link>
+
       </div>
 
     )

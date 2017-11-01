@@ -32,7 +32,6 @@ export default class GuideInfo extends Component{
             <div  className="col-sm-11">
                   <ul className='wordwrap'>
                     { Object.keys(guide).map(function (key) {
-                      console.log('key: ', key);  // Returns key: 1 and key: 2
                       return (<li >{guide[key]}</li>);
                       },
                     this)}

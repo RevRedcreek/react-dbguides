@@ -20,10 +20,10 @@ let actions = {
       id : id
     }
   },
-  addADVENTURE: function (text){
+  addADVENTURE: function (payload){
     return {
       type: ADD_ADVENTURE,
-      text : text
+      payload : payload
     }
   },
   completeADVENTURE: function(id){

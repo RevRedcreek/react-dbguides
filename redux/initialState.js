@@ -35,16 +35,16 @@ export default  {
       list: [
         {
           location: 'gunnison',
-          startTime: '2017-08-01',
-          endTime: '2017-08-01',
+          date: '2017-08-01',
+          duration: '2017-08-01',
           activity: 'Rock Climbing',
           description:'Rock climb',
           id: 1
        },
        {
          location: 'lake city',
-         startTime: '2017-08-01',
-         endTime: '2017-08-01',
+         date: '2017-08-01',
+         duration: '2017-08-01',
          activity: 'Ice Climbing',
          description:'Ice climb',
          id: 2

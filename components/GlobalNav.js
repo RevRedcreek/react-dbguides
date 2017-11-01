@@ -27,13 +27,13 @@ class GlobalNav extends Component {
 
           </div>
           <ul className="nav navbar-nav navbar-left">
-            <li><Link to="/guides" onlyActiveOnIndex="true" style={{ margin: '7px'}}>Guides</Link></li>
             <li><Link to="/adventures" onlyActiveOnIndex="true" style={{ margin: '7px'}}>Adventures</Link></li>
+            <li><Link to="/guides" onlyActiveOnIndex="true" style={{ margin: '7px'}}>Guides</Link></li>
           </ul>
 
           <ul className="nav navbar-nav navbar-right">
-            <li><Link to="/login" onlyActiveOnIndex="true" style={{ margin: '7px'}} >Login <div className='fa fa-sign-in'/> </Link></li>
-            <li><Link to="/signup" onlyActiveOnIndex="true" style={{ margin: '7px'}} >Sign Up <div className='fa fa-user-plus'/> </Link></li>
+            <li ><Link to="/register"  onlyActiveOnIndex="true" style={{ margin: '7px'}} >Sign Up <i className='fa fa-user-plus'/> </Link></li>
+            <li><Link to="/login" onlyActiveOnIndex="true" style={{ margin: '7px'}} >Log In <i className='fa fa-sign-in'/> </Link></li>
           </ul>
 
 

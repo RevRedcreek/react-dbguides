@@ -3,6 +3,9 @@ import {render} from 'react-dom'
 
 import App from '../components/App'
 import Home from '../components/Home'
+import Login from '../components/Login'
+import RegisterUser from '../components/RegisterUser'
+import CreateAdventure from '../components/CreateAdventure'
 import GuideList from '../components/GuideList'
 import GuideInfo from '../components/GuideInfo'
 import GuideInfoExpanded from '../components/GuideInfoExpanded'
@@ -85,16 +88,16 @@ let initialState = {
     list: [
       {
         location: 'gunnison',
-        startTime: '2017-08-01',
-        endTime: '2017-08-01',
+        date: '2017-08-01',
+        duration: '2017-08-01',
         activity: 'Rock Climbing',
         description:'Rock climb',
         id: 1
      },
      {
        location: 'lake city',
-       startTime: '2017-08-01',
-       endTime: '2017-08-01',
+       date: '2017-08-01',
+       duration: '2017-08-01',
        activity: 'Ice Climbing',
        description:'Ice climb',
        id: 2
@@ -113,10 +116,14 @@ render(
       <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={Home}/>
+          <Route name="Login" path="/login" component={Login}/>
+          <Route name="Register" path="/register" component={RegisterUser}/>
           <Route name="GuideList" path="/guides" component={GuideList}/>
           <Route name="GuideInfoExpanded" path="/guides/:id" component={GuideInfoExpanded}/>
           <Route name="AdventureList" path="/adventures" component={AdventureList}/>
+          <Route name="CreateAdventure" path="/adventures/create" component={CreateAdventure}/>
           <Route name="AdventureInfoExpanded" path="/adventures/:id" component={AdventureInfoExpanded}/>
+
         </Route>
       </Router>
     </div>
