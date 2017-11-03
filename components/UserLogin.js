@@ -11,10 +11,7 @@ export default class UserLogin extends Component{
   }
 
   handleChange (event) {
-   console.log('old state:', this.state)
    this.setState({[event.target.name]: event.target.value})
-   console.log('new state:', this.state)
-
  }
 
  render () {
@@ -29,8 +26,6 @@ export default class UserLogin extends Component{
 
   handleSubmit(event){
     this.props.actions.requestLogin(this.state)
-    // this.props.addADVENTURE(this.state.inputText)
-    console.log('login button pressed')
     event.preventDefault()
   }
 }

@@ -24,27 +24,3 @@ export default class SearchBar extends Component {
     )
   }
 }
-
-// <div className="well">
-//   <form className="form-inline">
-//     <div className="form-group">
-//       <label for="location">Location:</label>
-//       <input type="location" class="form-control" id="email"/>
-//     </div>
-//     <div className="form-group">
-//       <label for="keyword">Activity:</label>
-//       <input type="keyword" class="form-control" id="keyword"/>
-//     </div>
-//     <button type="submit" className="btn btn-default">Search</button>
-//   </form>
-// </div>
-// <div id="imaginary_container">
-//    <div className="input-group stylish-input-group">
-//        <input type="text" className="form-control"  placeholder="Search" />
-//        <span className="input-group-addon">
-//            <button type="submit">
-//                <span className="glyphicon glyphicon-search"></span>
-//            </button>
-//        </span>
-//    </div>
-//  </div>

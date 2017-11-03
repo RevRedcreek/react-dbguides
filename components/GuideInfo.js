@@ -18,9 +18,10 @@ export default class GuideInfo extends Component{
 
   render(){
     const {guide, actions} = this.props
+    var i = 0;
+
     return (
         <div id="itemView" className="row">
-          <Link to={`/guides/${guide.id}`} guide={guide} actions={actions}>
             <div className="col-sm-1">
               <FontAwesome
               className='fa-camera-retro'
@@ -32,13 +33,42 @@ export default class GuideInfo extends Component{
             <div  className="col-sm-11">
                   <ul className='wordwrap'>
                     { Object.keys(guide).map(function (key) {
-                      return (<li >{guide[key]}</li>);
+                      i = i + 1;
+                      return (<li key={i} >{guide[key]}</li>);
                       },
                     this)}
                   </ul>
             </div>
-          </Link>
+          <button className="fa fa-plus" onClick={this.handleExpand.bind(this)} id={guide.id}/>
         </div>
     )
   }
+
+  handleExpand(event){
+    event.preventDefault()
+    console.log("event.target: ", event.target)
+    this.props.actions.expandGUIDE(event.target.id)
+  }
 }
+
+// <div id="itemView" className="row">
+//   <Link to={`/guides/${guide.id}`} guide={guide} actions={actions}>
+//     <div className="col-sm-1">
+//       <FontAwesome
+//       className='fa-camera-retro'
+//       name='fa-camera-retro'
+//       size='5x'
+//       style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',  padding: '10px' }}
+//       />
+//     </div>
+//     <div  className="col-sm-11">
+//           <ul className='wordwrap'>
+//             { Object.keys(guide).map(function (key) {
+//               i = i + 1;
+//               return (<li key={i} >{guide[key]}</li>);
+//               },
+//             this)}
+//           </ul>
+//     </div>
+//   </Link>
+// </div>

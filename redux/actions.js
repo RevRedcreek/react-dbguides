@@ -5,6 +5,9 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE'
 import { CALL_API } from '../middleware/api'
 import Auth0Lock from 'auth0-lock'
 // import {AUTH0_CLIENT_ID, AUTH0_CLIENT_DOMAIN} from '../.env'
+export const EXPAND_GUIDE = 'EXPAND_GUIDE'
+export const COLLAPSE_GUIDE = 'COLLAPSE_GUIDE'
+
 export const ADVENTURE_REQUEST = 'ADVENTURE_REQUEST'
 export const ADVENTURE_SUCCESS = 'ADVENTURE_SUCCESS'
 export const ADVENTURE_FAILURE = 'ADVENTURE_FAILURE'
@@ -17,6 +20,12 @@ let actions = {
   expandGUIDE: function (id) {
     return {
       type: EXPAND_GUIDE,
+      id : id
+    }
+  },
+  collapseGuide: function (id) {
+    return {
+      type: COLLAPSE_GUIDE,
       id : id
     }
   },

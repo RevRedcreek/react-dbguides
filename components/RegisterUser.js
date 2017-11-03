@@ -18,7 +18,7 @@ export default class RegisterUser extends Component {
 
     return (
       <div id="expandedViewBackground" >
-        <div id="itemViewExpanded" >
+        <div id="formViewExpanded" >
           <form className="form-group" onSubmit={this.handleSubmit.bind(this)}>
             <input
             className='form-control'
@@ -75,11 +75,7 @@ export default class RegisterUser extends Component {
 
  }
   handleSubmit(event) {
-    // const email = this.refs.email
-    // const password = this.refs.password
-    // const creds = { email: email.value.trim(), password: password.value.trim() }
     this.props.onLoginClick()
-    console.log('submit button pressed')
     event.preventDefault()
   }
 }

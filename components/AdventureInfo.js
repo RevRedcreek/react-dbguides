@@ -24,7 +24,7 @@ export default class AdventureInfo extends Component{
 
     // const { fetchAdventure, onSecretAdventureClick, isAuthenticated, adventure, isSecretAdventure } = this.props.actions
     const {adventure, isAuthenticated, errorMessage, isSecretQuote } = this.props
-
+    var i = 0;
         return (
             <div id="itemView" className="row">
               <Link to={`/adventures/${adventure.id}`} adventure={`${adventure}`}>
@@ -38,10 +38,10 @@ export default class AdventureInfo extends Component{
                 </div>
                 <div  className="col-md-4">
                     <ul >
+
                       { Object.keys(this.props.adventure).map(function (key) {
-                        console.log('key: ', key);  // Returns key: 1 and key: 2
-                        if(key !== 'description'){
-                          return (<li >{key} : {this.props.adventure[key]}</li>);
+                        if(key !== 'description'){ i = i + 1;
+                          return (<li key={Math.random()}>{key} : {this.props.adventure[key]}</li>);
                         }
                         },
                       this)}

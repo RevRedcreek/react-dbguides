@@ -10,7 +10,7 @@ import {
 } from '../actions'
 
 
-let adventuresReducer = function(adventures=[], action){
+let adventuresReducer = function(adventures={isFetching: false, list: []}, action){
   switch(action.type){
     case ADVENTURE_REQUEST:
       return Object.assign({}, adventures, {
@@ -27,12 +27,9 @@ let adventuresReducer = function(adventures=[], action){
         isFetching: false
       })
     case ADD_ADVENTURE:
-      return [{
-          //add new adventures
-          text: action.text,
-          completed: false,
-          id: getId(adventures)
-        }, ...adventures]
+      console.log('payload::::', action.payload)
+      console.log('adventures::::', adventures)
+      return Object.assign({}, adventures, { list:[ ...adventures.list, action.payload]})
     case COMPLETE_ADVENTURE:
       return adventures.map((adventure) => {
           return adventure.id === action.id ?

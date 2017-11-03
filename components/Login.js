@@ -15,7 +15,7 @@ export default class Login extends Component {
 
     return (
       <div id="expandedViewBackground" >
-        <div id="itemViewExpanded" >
+        <div id="formViewExpanded" >
           <form className="form-group" onSubmit={this.handleSubmit.bind(this)}>
             <input
             className='form-control'
