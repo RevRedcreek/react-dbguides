@@ -27,7 +27,6 @@ export default class AdventureInfo extends Component{
     var i = 0;
         return (
             <div id="itemView" className="row">
-              <Link to={`/adventures/${adventure.id}`} adventure={`${adventure}`}>
                 <div className="col-md-4">
                   <FontAwesome
                   className='fa-camera-retro'
@@ -36,24 +35,32 @@ export default class AdventureInfo extends Component{
                   style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',  padding: '10px' }}
                   />
                 </div>
-                <div  className="col-md-4">
+                <div  className="col-md-7">
                     <ul >
 
                       { Object.keys(this.props.adventure).map(function (key) {
                         if(key !== 'description'){ i = i + 1;
-                          return (<li key={Math.random()}>{key} : {this.props.adventure[key]}</li>);
+                          if(key == 'activity'){
+                            return (<li ><h5 className="media-heading">{adventure[key]}</h5></li>);
+                          }
+                          else{return (<li >{adventure[key]}</li>);}
                         }
                         },
                       this)}
                     </ul>
                 </div>
-                <div  className="col-md-4">
-                {this.props.adventure['description']}
+                <div  className="col-md-1">
+                  <button className="fa fa-plus " onClick={this.handleExpand.bind(this)} id={adventure.id}/>
                 </div>
 
-              </Link>
             </div>
         )
+  }
+
+  handleExpand(event){
+    event.preventDefault()
+    console.log("event.target: ", event.target)
+    this.props.actions.expandAdventure(event.target.id)
   }
 }
 

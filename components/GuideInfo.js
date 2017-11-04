@@ -22,7 +22,7 @@ export default class GuideInfo extends Component{
 
     return (
         <div id="itemView" className="row">
-            <div className="col-sm-1">
+            <div className="col-sm-2">
               <FontAwesome
               className='fa-camera-retro'
               name='fa-camera-retro'
@@ -30,16 +30,22 @@ export default class GuideInfo extends Component{
               style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',  padding: '10px' }}
               />
             </div>
-            <div  className="col-sm-11">
+            <div  className="col-sm-9">
                   <ul className='wordwrap'>
                     { Object.keys(guide).map(function (key) {
                       i = i + 1;
-                      return (<li key={i} >{guide[key]}</li>);
+                      if(key == 'username'){
+                        return (<li ><h5 className="media-heading">{guide[key]}</h5></li>);
+                      }
+                      else{return (<li >{guide[key]}</li>);}
                       },
                     this)}
                   </ul>
             </div>
-          <button className="fa fa-plus" onClick={this.handleExpand.bind(this)} id={guide.id}/>
+        <div>
+          <button className="fa fa-plus col-sm-1 " onClick={this.handleExpand.bind(this)} id={guide.id}/>
+        </div>
+
         </div>
     )
   }

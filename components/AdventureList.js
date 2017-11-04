@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router'
 import AdventureInfo from './AdventureInfo'
+import AdventureInfoExpanded from './AdventureInfoExpanded'
 
 export default class AdventureList extends Component{
 
@@ -10,6 +11,7 @@ export default class AdventureList extends Component{
         <div  id="listView">
             {
               this.props.adventures.list.map((adventure) =>{
+                if(adventure.expanded){return <AdventureInfoExpanded key={adventure.id} adventure={adventure} actions={this.props.actions}/> }
                 return <AdventureInfo key={adventure.id} adventure={adventure} actions={this.props.actions}/>
               })
             }

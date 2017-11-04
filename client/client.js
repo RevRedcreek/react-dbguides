@@ -87,20 +87,23 @@ let initialState = {
     isFetching: false,
     list: [
       {
+        activity: 'Rock Climbing',
         location: 'gunnison',
         date: '2017-08-01',
         duration: '2017-08-01',
-        activity: 'Rock Climbing',
         description:'Rock climb',
-        id: 1
+        id: 1,
+        expanded: false
      },
      {
+       activity: 'Rock Climbing',
        location: 'lake city',
        date: '2017-08-01',
        duration: '2017-08-01',
        activity: 'Ice Climbing',
        description:'Ice climb',
-       id: 2
+       id: 2,
+       expanded: false
     }
   ]
   }

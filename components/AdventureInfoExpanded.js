@@ -14,10 +14,11 @@ export default class AdventureInfoExpanded extends Component{
   //<img id="avatar" src={this.props.guide.avatar}/>
 
   render(){
+    const {adventure} = this.props
+
     return (
-      <div id="expandedViewBackground">
-        <div id="itemViewExpanded" className="row">
-          <div className="row-sm-3">
+        <div id="itemViewExpanded" className="media row">
+          <div className="media-left row-sm-2">
             <FontAwesome
             className='fa-camera-retro'
             name='fa-camera-retro'
@@ -25,18 +26,27 @@ export default class AdventureInfoExpanded extends Component{
             style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',  padding: '10px' }}
             />
           </div>
-          <div  className="row-sm-9">
+          <div  className="media-body row-sm-9">
           { Object.keys(this.props.adventure).map(function (key) {
             console.log('key: ', key);  // Returns key: 1 and key: 2
-            return (<span >{this.props.adventure[key]}</span>);
+            if(key == 'activity'){
+              return (<h4 className="media-heading">{adventure[key]}</h4>);
+            }
+            else{return (<li >{adventure[key]}</li>);}
             },
           this)}
           </div>
+          <div className="row-sm-1">
+            <button id={adventure.id} onClick={this.handleCollapse.bind(this)} className='fa fa-minus' ></button>
+          </div>
         </div>
-      </div>
 
     )
   }
-
+  handleCollapse(event){
+    event.preventDefault()
+    console.log("event.target: ", event.target)
+    this.props.actions.collapseAdventure(event.target.id)
+  }
 
 }

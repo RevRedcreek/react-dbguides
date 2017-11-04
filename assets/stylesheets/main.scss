@@ -103,14 +103,13 @@ ul {
   border-radius: 25px;
   min-height: 10%;
   width: 97%;
-  height: auto;
+  height: 20vh;
   background-color: whiteSmoke;
   // max-height:100%;
   max-width:100%;
   font-size: 11px;
   word-wrap: break-word;
-  // overflow: auto;
-  //// vvvvv USEFULL, hide text when element is too small
+  overflow: auto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -120,8 +119,6 @@ ul {
   // height: 100%;
   display: -ms-flex;
 	display: -webkit-flex;
-	display: flex;
-  display: table;
   display: flex; /*set display to flex*/
   flex-direction: column; /*flex direction colum*/
   flex-grow: 2;
@@ -129,12 +126,15 @@ ul {
   align-content: flex-start; /*add align content flex start*/
   max-height:100%;
   max-width:100%;
-
+  text-overflow: ellipsis;
   height: auto;
-
+  white-space: nowrap;
   // padding: 10px 10px 10px 10px;
   border: solid transparent;
+  text-overflow: ellipsis;
+
 }
+
 #itemView li{
   // position: absolute;
   max-width:100%;
@@ -142,7 +142,7 @@ ul {
 	padding: 5px;
   margin: 5px;
   display: flex-box;
-  word-wrap: break-word;
+  word-wrap: nowrap;
   display: table;
   border: solid transparent;
   display: table-cell;
@@ -157,6 +157,7 @@ ul {
   height: 70vh;
   display: inline-flex;
   margin: 10px;
+  padding: 5vh;
   border-radius: 25px;
   min-height: 10%;
   width: 97%;
@@ -165,15 +166,23 @@ ul {
   max-width:100%;
   font-size: 11px;
   word-wrap: break-word;
-  // overflow: auto;
-  //// vvvvv USEFULL, hide text when element is too small
-  white-space: nowrap;
+  overflow: auto;
+  white-space: wordwrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
+#itemViewExpanded ul{
+
+}
+#itemViewExpanded li{
+  padding: 2vh;
+  font-size: 15;
+}
+
 #itemViewExpanded button{
-  height: 1vh;
+  height: 3%;
+  width: 30%;
 }
+
 #formViewExpanded{
   height: 97%;
   margin: 10px;

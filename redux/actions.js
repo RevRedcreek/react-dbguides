@@ -7,6 +7,15 @@ import Auth0Lock from 'auth0-lock'
 // import {AUTH0_CLIENT_ID, AUTH0_CLIENT_DOMAIN} from '../.env'
 export const EXPAND_GUIDE = 'EXPAND_GUIDE'
 export const COLLAPSE_GUIDE = 'COLLAPSE_GUIDE'
+export const GUIDE_REQUEST = 'GUIDE_REQUEST'
+export const GUIDE_SUCCESS = 'GUIDE_SUCCESS'
+export const GUIDE_FAILURE = 'GUIDE_FAILURE'
+export const ADD_GUIDE = 'ADD_GUIDE'
+export const CREATE_GUIDE = 'CREATE_GUIDE'
+export const DELETE_GUIDE = 'DELETE_GUIDE'
+
+export const EXPAND_ADVENTURE = 'EXPAND_ADVENTURE'
+export const COLLAPSE_ADVENTURE = 'COLLAPSE_ADVENTURE'
 
 export const ADVENTURE_REQUEST = 'ADVENTURE_REQUEST'
 export const ADVENTURE_SUCCESS = 'ADVENTURE_SUCCESS'
@@ -26,6 +35,18 @@ let actions = {
   collapseGuide: function (id) {
     return {
       type: COLLAPSE_GUIDE,
+      id : id
+    }
+  },
+  expandAdventure: function(id){
+    return {
+      type: EXPAND_ADVENTURE,
+      id : id
+    }
+  },
+  collapseAdventure: function (id) {
+    return {
+      type: COLLAPSE_ADVENTURE,
       id : id
     }
   },

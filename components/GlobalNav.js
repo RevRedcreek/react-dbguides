@@ -20,7 +20,7 @@ class GlobalNav extends Component {
     const { isAuthenticated, errorMessage, actions } = this.props
 
     return (
-      <nav className="navbar navbar-inverse navbar-fixed-top">
+      <nav className="navbar navbar-inverse navbar-fixed-top topnav">
         <div className="container-fluid" id = "globalNav">
           <div className="navbar-header">
             <Link to="/" className="navbar-brand "><img src={Logo} width='250px'/></Link>{' '}
