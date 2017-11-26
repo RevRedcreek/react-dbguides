@@ -1,3 +1,12 @@
-# react-ADVENTURE-list
+# react-dbg is a prototype application
 
-This is a simple ADVENTURE list app built with React, Redux and Webpack. I built this app during my [tutorial series on YouTube](https://www.youtube.com/playlist?list=PLQDnxXqV213JJFtDaG0aE9vqvp6Wm7nBg).
+
+```
+npm install
+```
+```
+npm run start
+```
+
+It is hosted here:
+https://still-lake-24118.herokuapp.com/
