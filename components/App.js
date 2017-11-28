@@ -16,21 +16,27 @@ class App extends Component{
       childrenWithProps = React.Children.map(this.props.children,
          (child) => React.cloneElement(child, {...this.props}));
     }
-    const {quote, isAuthenticated, errorMessage, isSecretQuote } = this.props
+    const {actions, adventures, auth, guides, errorMessage, location, params, route, routeParams, router, routes, routing} = this.props
 
     return (
       <div>
         <GlobalNav
-          isAuthenticated={isAuthenticated}
+          isAuthenticated={auth.isAuthenticated}
           errorMessage={errorMessage}
-          user={this.props.user}
-          actions={this.props.actions}
+          user={auth.user}
+          actions={actions}
         />
 
         <div className="row homepage">
           <div className="col-sm-2"></div>
           <div className="col-sm-8">
-            <SearchBar></SearchBar>
+            <SearchBar
+            auth={auth}
+            errorMessage={errorMessage}
+            user={auth.user}
+            actions={actions}
+            location={location}
+            />
               {childrenWithProps}
           </div>
           <div className="col-sm-2"></div>

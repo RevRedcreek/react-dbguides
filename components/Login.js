@@ -56,7 +56,7 @@ export default class Login extends Component {
     // const email = this.refs.email
     // const password = this.refs.password
     // const creds = { email: email.value.trim(), password: password.value.trim() }
-    this.props.onLoginClick()
+    this.props.onLoginClick(this.state)
     console.log('submit button pressed')
     event.preventDefault()
   }

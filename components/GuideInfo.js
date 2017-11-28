@@ -53,7 +53,7 @@ export default class GuideInfo extends Component{
   handleExpand(event){
     event.preventDefault()
     console.log("event.target: ", event.target)
-    this.props.actions.expandGUIDE(event.target.id)
+    this.props.actions.expandGuide(event.target.id)
   }
 }
 

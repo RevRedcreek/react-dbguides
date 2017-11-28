@@ -2,6 +2,7 @@ export const LOGIN_REQUEST = 'LOGIN_REQUEST'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
 
+import fetch from 'isomorphic-fetch'
 import { CALL_API } from '../middleware/api'
 import Auth0Lock from 'auth0-lock'
 // import {AUTH0_CLIENT_ID, AUTH0_CLIENT_DOMAIN} from '../.env'
@@ -18,6 +19,8 @@ export const EXPAND_ADVENTURE = 'EXPAND_ADVENTURE'
 export const COLLAPSE_ADVENTURE = 'COLLAPSE_ADVENTURE'
 
 export const ADVENTURE_REQUEST = 'ADVENTURE_REQUEST'
+export const ADVENTURE_RECEIVE = 'ADVENTURE_RECEIVE'
+
 export const ADVENTURE_SUCCESS = 'ADVENTURE_SUCCESS'
 export const ADVENTURE_FAILURE = 'ADVENTURE_FAILURE'
 export const ADD_ADVENTURE = 'ADD_ADVENTURE'
@@ -26,7 +29,7 @@ export const COMPLETE_ADVENTURE = 'COMPLETE_ADVENTURE'
 export const DELETE_ADVENTURE = 'DELETE_ADVENTURE'
 
 let actions = {
-  expandGUIDE: function (id) {
+  expandGuide: function (id) {
     return {
       type: EXPAND_GUIDE,
       id : id
@@ -50,31 +53,51 @@ let actions = {
       id : id
     }
   },
-  addADVENTURE: function (payload){
+  addAdventure: function (payload){
     return {
       type: ADD_ADVENTURE,
       payload : payload
     }
   },
-  completeADVENTURE: function(id){
+  completeAdventure: function(id){
     return {
       type: COMPLETE_ADVENTURE,
       id: id
     }
   },
-  deleteADVENTURE: function(id){
+  deleteAdventure: function(id){
     return {
       type: DELETE_ADVENTURE,
       id: id
     }
   },
-  // Uses the API middlware to get a quote
-  fetchAdventure: function() {
+  requestAdventures: function (page){
     return {
-      [CALL_API]: {
-        endpoint: 'random-quote',
-        types: [ADVENTURE_REQUEST, ADVENTURE_SUCCESS, ADVENTURE_FAILURE]
-      }
+      type: ADVENTURE_REQUEST,
+      page : page
+    }
+  },
+  recieveAdventures: function(page, json){
+    console.log("JSON RESPONSE: ", json)
+
+    return {
+      type: ADVENTURE_RECEIVE,
+      adventures: {list: json.data},
+    }
+  },
+  // Uses the API middlware to get a quote
+  fetchAdventure: function(page) {
+    return dispatch => {
+      console.log("dispatch", dispatch)
+      dispatch(requestAdventures(page))
+      return fetch(`http://localhost:3000/adventures`)
+        .then(
+          response => response.json(),
+          error => console.log('An error occured.', error)
+        )
+        .then(json =>
+          dispatch(recieveAdventures(page, json))
+        )
     }
   },
   login: function() {

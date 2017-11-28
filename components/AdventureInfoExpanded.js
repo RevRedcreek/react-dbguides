@@ -2,14 +2,6 @@ import React, {Component} from 'react'
 import FontAwesome from 'react-fontawesome'
 
 export default class AdventureInfoExpanded extends Component{
-
-  handleComplete(){
-    this.props.actions.completeADVENTURE(this.props.ADVENTURE.id)
-  }
-
-  handleDelete(){
-    this.props.actions.deleteADVENTURE(this.props.ADVENTURE.id)
-  }
   //todo - figure out why this doesnt work:
   //<img id="avatar" src={this.props.guide.avatar}/>
 

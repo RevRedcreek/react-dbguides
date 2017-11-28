@@ -10,7 +10,7 @@ import {
 } from '../actions'
 
 let guidesReducer = function(guides={}, action){
-  console.log("initial state", guides)
+  console.log("Entering guides reducer...")
   switch(action.type){
     case EXPAND_GUIDE:
       var newObject = Object.assign({}, ...guides, {list:[]})

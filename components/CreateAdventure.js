@@ -95,7 +95,7 @@ export default class CreateAdventure extends Component {
     // const email = this.refs.email
     // const password = this.refs.password
     // const creds = { email: email.value.trim(), password: password.value.trim() }
-    this.props.actions.addADVENTURE(this.state)
+    this.props.actions.addAdventure(this.state)
     this.props.router.push('/adventures')
   }
 }

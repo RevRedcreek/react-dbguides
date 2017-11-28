@@ -5,12 +5,14 @@ function getId(adventures){
 }
 
 import {
-  EXPAND_ADVENTURE, COLLAPSE_ADVENTURE, ADD_ADVENTURE,  ADVENTURE_REQUEST, ADVENTURE_SUCCESS, ADVENTURE_FAILURE,
+  EXPAND_ADVENTURE, COLLAPSE_ADVENTURE, ADD_ADVENTURE,  ADVENTURE_REQUEST, ADVENTURE_RECEIVE, ADVENTURE_SUCCESS, ADVENTURE_FAILURE,
   COMPLETE_ADVENTURE, CREATE_ADVENTURE, DELETE_ADVENTURE
 } from '../actions'
 
 
 let adventuresReducer = function(adventures={isFetching: false, list: []}, action){
+  console.log("Entering adventure reducer...")
+
   switch(action.type){
     case EXPAND_ADVENTURE:
       var newObject = Object.assign({}, ...adventures, {list:[]})
@@ -21,7 +23,6 @@ let adventuresReducer = function(adventures={isFetching: false, list: []}, actio
             newObject["list"].push(adventure)
           }
         })
-        console.log("new state", newObject)
         return newObject
 
     case COLLAPSE_ADVENTURE:
@@ -36,12 +37,18 @@ let adventuresReducer = function(adventures={isFetching: false, list: []}, actio
         return newObject
 
     case ADD_ADVENTURE:
-      console.log('payload::::', action.payload)
-      console.log('adventures::::', adventures)
       return Object.assign({}, adventures, { list:[ ...adventures.list, action.payload]})
+
     case ADVENTURE_REQUEST:
       return Object.assign({}, adventures, {
-        isFetching: true
+        isFetching: true,
+        page: action.page
+      })
+    case ADVENTURE_RECEIVE:
+      return Object.assign({}, adventures, {
+        isFetching: true,
+        page: action.page + 1,
+        list : [...adventures['list'], action.adventures.list]
       })
     case  ADVENTURE_SUCCESS:
       return Object.assign({}, adventures, {
@@ -49,16 +56,19 @@ let adventuresReducer = function(adventures={isFetching: false, list: []}, actio
         quote: action.response,
         authenticated: action.authenticated || false
       })
+
     case ADVENTURE_FAILURE:
       return Object.assign({}, adventures, {
         isFetching: false
       })
+
     case COMPLETE_ADVENTURE:
       return adventures.map((adventure) => {
           return adventure.id === action.id ?
           Object.assign({}, adventure, {completed: !adventure.completed}) : adventure
         })
-      case DELETE_ADVENTURE:
+
+    case DELETE_ADVENTURE:
       return adventures.filter((adventure) => {
           return adventure.id !== action.id
         })
